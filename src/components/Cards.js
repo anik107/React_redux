@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Cardsdata from './CardsData';
 import "./style.css"
 import { useDispatch } from 'react-redux';
+import { ADD } from '../redux/actions/action';
+
 const Cards = () => {
 
   const [data, setData] = useState(Cardsdata);
@@ -12,7 +14,7 @@ const Cards = () => {
 
 
   const send = (e) =>{
-    console.log(e);
+    dispatch(ADD(e));
   }
 
   return (
