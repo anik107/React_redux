@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Badge from "@material-ui/core/Badge";
 import { NavLink } from 'react-router-dom'
 import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem';
+import { useSelector } from 'react-redux';
 function Header() {
+    
+    const getdate = useSelector((state)=> state.cartreducer.carts);
+    
+    
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
